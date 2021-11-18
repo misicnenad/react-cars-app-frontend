@@ -40,6 +40,15 @@ const NavItem = styled.li<{ menu?: any }>`
     `}
 `;
 
+const NavTag = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
+`;
+
 export function NavItems() {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
@@ -48,16 +57,16 @@ export function NavItems() {
       <Menu right styles={menuStyles}>
         <ListContainer>
           <NavItem menu>
-            <a href="#">Home</a>
+            <NavTag>Home</NavTag>
           </NavItem>
           <NavItem menu>
-            <a href="#">Cars</a>
+            <NavTag>Cars</NavTag>
           </NavItem>
           <NavItem menu>
-            <a href="#">Services</a>
+            <NavTag>Services</NavTag>
           </NavItem>
           <NavItem menu>
-            <a href="#">Contact us</a>
+            <NavTag>Contact us</NavTag>
           </NavItem>
         </ListContainer>
       </Menu>
@@ -66,16 +75,16 @@ export function NavItems() {
   return (
     <ListContainer>
       <NavItem>
-        <a href="#">Home</a>
+        <NavTag>Home</NavTag>
       </NavItem>
       <NavItem>
-        <a href="#">Cars</a>
+        <NavTag>Cars</NavTag>
       </NavItem>
       <NavItem>
-        <a href="#">Services</a>
+        <NavTag>Services</NavTag>
       </NavItem>
       <NavItem>
-        <a href="#">Contact us</a>
+        <NavTag>Contact us</NavTag>
       </NavItem>
     </ListContainer>
   );

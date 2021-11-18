@@ -150,6 +150,18 @@ const SmallText = styled.h6`
   `}
 `;
 
+const NavTag = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  color: white;
+  ${tw`
+    text-sm
+  `}
+`;
+
 function Footer() {
   return (
     <FooterContainer>
@@ -166,19 +178,19 @@ function Footer() {
           <HeaderTitle>Our Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#">Home</a>
+              <NavTag>Home</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">About Us</a>
+              <NavTag>About Us</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Services</a>
+              <NavTag>Services</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Models</a>
+              <NavTag>Models</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Blog</a>
+              <NavTag>Blog</NavTag>
             </ListItem>
           </LinksList>
         </SectionContainer>
@@ -186,19 +198,19 @@ function Footer() {
           <HeaderTitle>Other Links</HeaderTitle>
           <LinksList>
             <ListItem>
-              <a href="#">FAQ</a>
+              <NavTag>FAQ</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Contact Us</a>
+              <NavTag>Contact Us</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Support</a>
+              <NavTag>Support</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Privacy Policy</a>
+              <NavTag>Privacy Policy</NavTag>
             </ListItem>
             <ListItem>
-              <a href="#">Terms &amp; Conditions</a>
+              <NavTag>Terms &amp; Conditions</NavTag>
             </ListItem>
           </LinksList>
         </SectionContainer>
