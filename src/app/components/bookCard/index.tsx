@@ -14,6 +14,7 @@ import Calendar from "react-calendar";
 
 import "react-calendar/dist/Calendar.css";
 import { SCREENS } from "../responsive";
+import defaultColor from "../../constants";
 
 const CardContainer = styled.div`
   min-height: 4.3em;
@@ -40,8 +41,8 @@ const ItemContainer = styled.div`
 `;
 
 const Icon = styled.span`
+  color: ${defaultColor};
   ${tw`
-    text-red-500
     fill-current
     text-xs
     md:text-base

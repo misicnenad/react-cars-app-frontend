@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import defaultColor from "../../constants";
 
 interface IButtonProps {
   theme?: "filled" | "outlined";
@@ -27,27 +28,29 @@ const BaseButton = styled.div`
     duration-200
     ease-in-out
     m-1
+    cursor-pointer
   `}
 `;
 
 const OutlinedButton = styled(BaseButton)`
-  ${tw`
-    bg-red-500
-    hover:bg-transparent
-    hover:text-red-500
-    hover:border-red-500
-  `}
+  background-color: ${defaultColor};
+
+  &:hover {
+    color: ${defaultColor};
+    border-color: ${defaultColor};
+    background: transparent;
+  }
 `;
 
 const FilledButton = styled(BaseButton)`
-  ${tw`
-    border-red-500
-    text-red-500
-    bg-transparent
-    hover:bg-red-500
-    hover:text-white
-    hover:border-transparent
-  `}
+  border-color: ${defaultColor};
+  color: ${defaultColor};
+
+  &:hover {
+    background-color: ${defaultColor};
+    color: white;
+    border-color: transparent;
+  }
 `;
 
 export function Button(props: IButtonProps) {

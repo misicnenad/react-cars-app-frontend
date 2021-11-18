@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import defaultColor from "../../constants";
 
 const Container = styled.div`
   ${tw`
@@ -41,13 +42,16 @@ const StepsContainer = styled.div`
 `;
 
 const StepContainer = styled.div`
+  &:hover {
+    color: ${defaultColor};
+  }
+
   ${tw`
     flex
     flex-col
     md:w-96
     items-center
     transition-colors
-    hover:text-red-500
     m-3
   `}
 `;
@@ -83,8 +87,9 @@ const StepDescription = styled.p`
 `;
 
 const StepIcon = styled.span`
+  color: ${defaultColor};
+
   ${tw`
-    text-red-500
     text-3xl
   `}
 `;
