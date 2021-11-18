@@ -65,6 +65,8 @@ const Description = styled.p`
     overflow-hidden
     max-h-12
     text-gray-800
+    hidden
+    xs:block
   `}
 `;
 
