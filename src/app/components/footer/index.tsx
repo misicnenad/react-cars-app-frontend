@@ -6,7 +6,7 @@ import tw from "twin.macro";
 import { Logo } from "../logo";
 
 const FooterContainer = styled.div`
-  background-color: #1d2124;
+  background-color: #6B2F55;
   ${tw`
     flex
     flex-col
