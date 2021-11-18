@@ -90,21 +90,23 @@ function TopCars() {
   const { topCars } = useSelector(stateSelector);
   const { setTopCars } = actionDispatch(useDispatch());
 
-  const fetchTopCars = async () => {
-    setLoading(true);
-    const cars = await carService.getCars().catch((err) => {
-      console.log("Error: ", err);
-    });
-
-    console.log("Cars: ", cars);
-    if (cars) {
-      setTopCars(cars);
-    }
-    setLoading(false);
-  };
-
   useEffect(() => {
+
+    const fetchTopCars = async () => {
+      setLoading(true);
+      const cars = await carService.getCars().catch((err) => {
+        console.log("Error: ", err);
+      });
+
+      console.log("Cars: ", cars);
+      if (cars) {
+        setTopCars(cars);
+      }
+      setLoading(false);
+    };
+
     fetchTopCars();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isEmptyTopCars = !topCars || topCars.length === 0;
