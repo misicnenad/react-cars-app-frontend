@@ -169,7 +169,7 @@ function Footer() {
         <AboutContainer>
           <Logo color="white" bgColor="dark" />
           <AboutText>
-            Yourcar is a Car renting and selling company located in many
+            Yourcar. is a Car renting and selling company located in many
             countries across the world which has high quality cars and top rated
             service
           </AboutText>
