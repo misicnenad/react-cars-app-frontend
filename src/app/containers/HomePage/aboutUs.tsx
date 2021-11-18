@@ -82,7 +82,7 @@ function AboutUs() {
   return (
     <AboutUsContainer>
       <CarContainer>
-        <img src={JeepImg} alt="" />
+         <img src={JeepImg} alt="" />
       </CarContainer>
       <InfoContainer>
         <Title>Feel The Best Experience With Our Rental Deals</Title>
