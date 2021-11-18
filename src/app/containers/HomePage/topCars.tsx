@@ -13,7 +13,7 @@ import { setTopCars } from "./slice";
 import { useDispatch, useSelector } from "react-redux";
 import { makeSelectTopCars } from "./selectors";
 import { createSelector } from "reselect";
-// import MoonLoader from "react-spinners/MoonLoader";
+import MoonLoader from "react-spinners/MoonLoader";
 
 const TopCarsContainer = styled.div`
   ${tw`
@@ -61,17 +61,17 @@ const EmptyCars = styled.div`
   `}
 `;
 
-// const LoadingContainer = styled.div`
-//   ${tw`
-//     w-full
-//     mt-9
-//     flex
-//     items-center
-//     justify-center
-//     text-base
-//     text-black
-//   `}
-// `;
+const LoadingContainer = styled.div`
+  ${tw`
+    w-full
+    mt-9
+    flex
+    items-center
+    justify-center
+    text-base
+    text-black
+  `}
+`;
 
 const actionDispatch = (dispatch: Dispatch) => ({
   setTopCars: (cars: GetCars_cars[]) => dispatch(setTopCars(cars)),
@@ -83,7 +83,7 @@ const stateSelector = createSelector(makeSelectTopCars, (topCars) => ({
 
 function TopCars() {
   const [current, setCurrent] = useState(0);
-  // const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
 
@@ -91,7 +91,7 @@ function TopCars() {
   const { setTopCars } = actionDispatch(useDispatch());
 
   const fetchTopCars = async () => {
-    // setLoading(true);
+    setLoading(true);
     const cars = await carService.getCars().catch((err) => {
       console.log("Error: ", err);
     });
@@ -100,12 +100,12 @@ function TopCars() {
     if (cars) {
       setTopCars(cars);
     }
-    // setLoading(false);
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchTopCars();
-  });
+  }, []);
 
   const isEmptyTopCars = !topCars || topCars.length === 0;
 
@@ -119,13 +119,13 @@ function TopCars() {
   return (
     <TopCarsContainer>
       <Title>Explore Our Top Deals</Title>
-      {/* {isLoading && (
+      {isLoading && (
         <LoadingContainer>
           <MoonLoader loading size={20} />
         </LoadingContainer>
-      )} */}
-      {isEmptyTopCars && <EmptyCars>No Cars To Show</EmptyCars>}
-      {!isEmptyTopCars && (
+      )}
+      {isEmptyTopCars && !isLoading && <EmptyCars>No Cars To Show</EmptyCars>}
+      {!isEmptyTopCars && !isLoading && (
         <CarsContainer>
           <Carousel
             value={current}
