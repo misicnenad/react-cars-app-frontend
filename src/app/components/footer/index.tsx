@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import defaultColor from "../../constants";
 import { Logo } from "../logo";
 
 const FooterContainer = styled.div`
@@ -130,7 +129,7 @@ const HorizontalContainer = styled.div`
 `;
 
 const RedIcon = styled.span`
-  background-color: ${defaultColor};
+  background-color: ${props => props.theme.main};
 
   ${tw`
     w-9

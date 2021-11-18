@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import defaultColor from "../../constants";
 
 interface IButtonProps {
   theme?: "filled" | "outlined";
@@ -33,21 +32,21 @@ const BaseButton = styled.div`
 `;
 
 const OutlinedButton = styled(BaseButton)`
-  background-color: ${defaultColor};
+  background-color: ${props => props.theme.main};
 
   &:hover {
-    color: ${defaultColor};
-    border-color: ${defaultColor};
+    color: ${props => props.theme.main};
+    border-color: ${props => props.theme.main};
     background: transparent;
   }
 `;
 
 const FilledButton = styled(BaseButton)`
-  border-color: ${defaultColor};
-  color: ${defaultColor};
+  border-color: ${props => props.theme.main};
+  color: ${props => props.theme.main};
 
   &:hover {
-    background-color: ${defaultColor};
+    background-color: ${props => props.theme.main};
     color: white;
     border-color: transparent;
   }

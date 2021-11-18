@@ -8,7 +8,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { ICar } from "../../../typings/car";
-import defaultColor from "../../constants";
+
 import { Button } from "../button";
 
 interface ICarProps extends ICar {}
@@ -72,7 +72,7 @@ const SmallText = styled.p`
 `;
 
 const DailyPrice = styled.h5`
-  color: ${defaultColor};
+  color: ${props => props.theme.main};
   ${tw`
     font-bold
     text-sm

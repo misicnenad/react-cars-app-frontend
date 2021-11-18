@@ -1,8 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import tw from "twin.macro";
 import "./App.css";
 import { HomePage } from "./app/containers/HomePage";
+
+const theme = {
+  main: "rgb(85, 107, 47)",
+};
 
 const AppContainer = styled.div`
   ${tw`
@@ -15,9 +19,11 @@ const AppContainer = styled.div`
 
 function App() {
   return (
-    <AppContainer>
-      <HomePage />
-    </AppContainer>
+    <ThemeProvider theme={theme}>
+      <AppContainer>
+        <HomePage />
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 
